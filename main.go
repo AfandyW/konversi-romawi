@@ -18,10 +18,8 @@ func KonversiNumberToRomawi(input int) []string {
 
 	for true {
 		if ribuan.MatchString(s) {
-			var n, _ = strconv.Atoi(s)
-			var x = n
-			fmt.Println(x)
-	
+			var x, _ = strconv.Atoi(s)
+
 			for x >= 1000 {
 				hasil = append(hasil, "M")
 				x -= 1000
@@ -29,10 +27,8 @@ func KonversiNumberToRomawi(input int) []string {
 			s = strconv.Itoa(x)
 		}
 		if ratusan.MatchString(s) {
-			var n, _ = strconv.Atoi(s)
-			var x = n
-			fmt.Println(x)
-	
+			var x, _ = strconv.Atoi(s)
+
 			for x >= 100 {
 				if x >= 900 {
 					hasil = append(hasil, "C M")
@@ -43,7 +39,7 @@ func KonversiNumberToRomawi(input int) []string {
 				} else if x >= 400 {
 					hasil = append(hasil, "C D")
 					x -= 400
-				}else {
+				} else {
 					hasil = append(hasil, "C")
 					x -= 100
 				}
@@ -51,11 +47,8 @@ func KonversiNumberToRomawi(input int) []string {
 			s = strconv.Itoa(x)
 		}
 		if puluhan.MatchString(s) {
-			var n, _ = strconv.Atoi(s)
-			var x = n
+			var x, _ = strconv.Atoi(s)
 
-			fmt.Println(x)
-	
 			for x >= 10 {
 				if x >= 90 {
 					hasil = append(hasil, "X C")
@@ -66,7 +59,7 @@ func KonversiNumberToRomawi(input int) []string {
 				} else if x >= 40 {
 					hasil = append(hasil, "X L")
 					x -= 40
-				}else {
+				} else {
 					hasil = append(hasil, "X")
 					x -= 10
 				}
@@ -74,9 +67,8 @@ func KonversiNumberToRomawi(input int) []string {
 			s = strconv.Itoa(x)
 		}
 		if satuan.MatchString(s) {
-			var n, _ = strconv.Atoi(s)
-			var x = n
-	
+			var x, _ = strconv.Atoi(s)
+
 			for x > 0 {
 				if x >= 9 {
 					hasil = append(hasil, "I X")
@@ -87,7 +79,7 @@ func KonversiNumberToRomawi(input int) []string {
 				} else if x >= 4 {
 					hasil = append(hasil, "I V")
 					x -= 4
-				}else {
+				} else {
 					hasil = append(hasil, "I")
 					x -= 1
 				}
