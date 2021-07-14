@@ -16,7 +16,7 @@ func KonversiNumberToRomawi(input int) []string {
 
 	var s string = strconv.Itoa(input)
 
-	for true {
+	for {
 		if ribuan.MatchString(s) {
 			var x, _ = strconv.Atoi(s)
 
